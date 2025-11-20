@@ -1,48 +1,128 @@
 body {
-    background-color: #001d2d;
-    color: #e3f2f4;
+  background-color: #001d2d;
+  color: #e3f2f4;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
 }
 
 nav {
-    padding: 10px;
-    display: flex;
-    /* flex-direction: row; */
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
+  padding: 10px;
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-nav a{
-    color: #e3f2f4;
-    text-decoration: none;
-    font-size: 24px;
-    display: inline-block;
+nav a {
+  color: #e3f2f4;
+  text-decoration: none;
+  font-size: 24px;
+  display: inline-block;
 }
 
-nav div a{
-    padding: 0 10px;
+nav div a {
+  padding: 0 10px;
 }
 
-nav .social-icons svg{
-    width: 20px;
-    height: 20px;
-    margin: 0 10px;
-    cursor: pointer;
+nav .social-icons svg {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+  cursor: pointer;
 }
 
 .logo {
-    font-size: 42px;
+  font-size: 42px;
 }
 
-
 .box {
-    background-color: white;
-    color: black;
-    display: inline-block;
+  background-color: white;
+  color: black;
+  display: inline-block;
 }
 
 .two {
-    background-color: white;
-    color: black;
-    display: inline-block;
+  background-color: white;
+  color: black;
+  display: inline-block;
+}
+
+.leading {
+  display: flex;
+  align-items: center;
+}
+
+.leading div {
+  flex: 1;
+  font-size: 44px;
+  padding: 10px;
+}
+.leading img {
+  flex: 1;
+  object-fit: contain;
+  height: 300px;
+}
+
+.leading div p {
+  margin-bottom: 20px;
+}
+
+.download {
+  background-color: #4ed0ed;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease-in;
+  cursor: pointer;
+}
+
+.download svg {
+  width: 20px;
+  margin-left: 20px;
+}
+
+.download:hover {
+  background-color: #01a7cc;
+}
+
+.chatbox {
+  background-color: #4ed0ed;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all ease-in-out 0.3s;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.chatbox:hover {
+  background-color: #01a7cc;
+}
+
+.chatbox svg {
+  width: 40px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+
+.title {
+    color: #4ed0ed;
 }
