@@ -25,6 +25,11 @@ nav a {
   text-decoration: none;
   font-size: 24px;
   display: inline-block;
+  margin: 20px 0;
+}
+
+.links {
+  margin-bottom: 20px;
 }
 
 nav div a {
@@ -42,16 +47,35 @@ nav .social-icons svg {
   font-size: 42px;
 }
 
-.box {
-  background-color: white;
-  color: black;
-  display: inline-block;
+.hamburger-menu {
+  width: 40px;
 }
 
-.two {
-  background-color: white;
-  color: black;
-  display: inline-block;
+.nav-links {
+  background-color: #001d2d;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  display: none;
+}
+
+.mobile-nav-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.mobile-nav-actions svg {
+  width: 40px;
+}
+
+.nav-links .links {
+  display: flex;
+  flex-direction: column;
 }
 
 .leading {
@@ -163,7 +187,7 @@ footer {
 
 .project-card div {
   padding: 0 8px;
-  color:#001d2d;
+  color: #001d2d;
 }
 
 .project-card div h3 {
@@ -185,4 +209,40 @@ footer {
   color: white;
   padding: 5px 8px;
   border-radius: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+  .leading img {
+    display: block;
+  }
+
+  .projects-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .project-card {
+    max-width: 300px;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .nav-links {
+    display: block;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links .links {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+    margin-right: 100px;
+  }
+  .mobile-nav-actions {
+    display: none;
+  }
 }
