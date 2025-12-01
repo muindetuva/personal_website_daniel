@@ -129,7 +129,7 @@ nav {
   flex: 1;
   object-fit: contain;
   height: 300px;
-  display: none; 
+  display: none;
 }
 
 /* Download Button */
@@ -182,7 +182,7 @@ nav {
   background-color: var(--white);
   box-shadow: var(--shadow-standard);
   /* Vendor prefixes for shadow are largely unnecessary in 2025, but kept if you need legacy support */
-  -webkit-box-shadow: var(--shadow-standard); 
+  -webkit-box-shadow: var(--shadow-standard);
   -moz-box-shadow: var(--shadow-standard);
 }
 
@@ -227,7 +227,7 @@ footer {
 }
 
 footer a {
-    color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 .chatbox {
@@ -242,7 +242,7 @@ footer a {
   transition: all ease-in-out 0.3s;
   position: fixed;
   bottom: 10px;
-  right: 10px;
+  right: 20px;
   cursor: pointer;
 }
 
@@ -254,11 +254,39 @@ footer a {
   width: 40px;
 }
 
+.chatbox-window {
+  width: 350px;
+  height: 350px;
+  background-color: white;
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  border-radius: 6px;
+  box-shadow: var(--shadow-standard);
+  display: none;
+}
+
+.chat-header {
+  background-color: var(--accent-primary);
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px 6px 0 0;
+}
+
+#close-chat {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 /* =========================================
    7. MEDIA QUERIES (Desktop > 768px)
    ========================================= */
 @media only screen and (min-width: 768px) {
-  
   /* Reset Navigation for Desktop */
   .hamburger-menu,
   .mobile-nav-actions {
@@ -281,10 +309,10 @@ footer a {
     margin-bottom: 0;
     margin-right: 100px;
   }
-  
+
   .nav-links a {
-      font-size: 18px; /* Adjusted size for desktop header */
-      margin: 0 15px;
+    font-size: 18px; /* Adjusted size for desktop header */
+    margin: 0 15px;
   }
 
   /* Show Hero Image */

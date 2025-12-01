@@ -4,7 +4,11 @@ const navLinks = document.querySelector('.nav-links');
 
 const closeButton = document.querySelector('.close-btn');
 
-console.log(menu)
+const chatboxTrigger = document.querySelector('#chatbox-trigger');
+
+const chatboxWindow = document.querySelector('.chatbox-window');
+
+const chatbotCloseBtn = document.querySelector('#close-chat');
 
 menu.addEventListener('click', () => {
     navLinks.style.display = "block";
@@ -12,4 +16,12 @@ menu.addEventListener('click', () => {
 
 closeButton.addEventListener('click', () => {
     navLinks.style.display = "none";
+})
+
+chatboxTrigger.addEventListener('click', () => {
+    chatboxWindow.style.display = "block";
+})
+
+chatbotCloseBtn.addEventListener('click', () => {
+    chatboxWindow.style.display = "none";
 })
