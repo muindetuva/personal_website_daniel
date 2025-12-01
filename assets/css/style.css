@@ -255,6 +255,8 @@ footer a {
 }
 
 .chatbox-window {
+  display: flex;
+  flex-direction: column;
   width: 350px;
   height: 350px;
   background-color: white;
@@ -280,6 +282,54 @@ footer a {
   border: none;
   font-size: 24px;
   color: #ffffff;
+  cursor: pointer;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.msg {
+  padding: 5px 10px;
+  border-radius: 6px;
+  max-width: 80%;
+}
+
+.msg.bot {
+  background-color: var(--bg-dark);
+  align-self: flex-start;
+}
+
+.msg.user {
+  background-color: var(--accent-hover);
+  align-self: flex-end;
+}
+
+.chat-form {
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid var(--bg-dark);
+}
+
+#chat-input {
+  padding: 10px;
+  flex: 1;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid var(--accent-primary);
+}
+
+.chat-form button {
+  background-color: var(--bg-dark);
+  color: white;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
 }
 

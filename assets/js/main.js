@@ -19,7 +19,7 @@ closeButton.addEventListener('click', () => {
 })
 
 chatboxTrigger.addEventListener('click', () => {
-    chatboxWindow.style.display = "block";
+    chatboxWindow.style.display = "flex";
 })
 
 chatbotCloseBtn.addEventListener('click', () => {
