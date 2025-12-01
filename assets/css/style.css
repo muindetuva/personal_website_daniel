@@ -1,9 +1,22 @@
+/* =========================================
+   1. VARIABLES & SETUP
+   ========================================= */
+:root {
+  --bg-dark: #001d2d;
+  --text-light: #e3f2f4;
+  --accent-primary: #4ed0ed;
+  --accent-hover: #01a7cc;
+  --white: #ffffff;
+  --shadow-standard: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
 body {
-  background-color: #001d2d;
-  color: #e3f2f4;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
   height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: sans-serif; /* Added a fallback font */
 }
 
 main {
@@ -11,55 +24,49 @@ main {
   padding: 0 10px;
 }
 
+a {
+  text-decoration: none;
+}
+
+/* =========================================
+   2. TYPOGRAPHY & UTILITIES
+   ========================================= */
+.title {
+  color: var(--accent-primary);
+}
+
+.logo {
+  font-size: 42px;
+  color: var(--text-light);
+}
+
+/* =========================================
+   3. NAVIGATION (Mobile Default)
+   ========================================= */
 nav {
   padding: 10px;
   display: flex;
-  /* flex-direction: row; */
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-nav a {
-  color: #e3f2f4;
-  text-decoration: none;
-  font-size: 24px;
-  display: inline-block;
-  margin: 20px 0;
-}
-
-.links {
-  margin-bottom: 20px;
-}
-
-nav div a {
-  padding: 0 10px;
-}
-
-nav .social-icons svg {
-  width: 20px;
-  height: 20px;
-  margin: 0 10px;
+.hamburger-menu {
+  width: 40px;
   cursor: pointer;
 }
 
-.logo {
-  font-size: 42px;
-}
-
-.hamburger-menu {
-  width: 40px;
-}
-
+/* Mobile Sidebar Overlay */
 .nav-links {
-  background-color: #001d2d;
+  background-color: var(--bg-dark);
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 10px;
-  display: none;
+  display: none; /* Toggled via JS */
+  z-index: 100;
 }
 
 .mobile-nav-actions {
@@ -71,13 +78,37 @@ nav .social-icons svg {
 
 .mobile-nav-actions svg {
   width: 40px;
+  cursor: pointer;
 }
 
 .nav-links .links {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
+.nav-links a {
+  color: var(--text-light);
+  font-size: 24px;
+  margin: 20px 0;
+  padding: 0 10px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons svg {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* =========================================
+   4. HERO / LEADING SECTION
+   ========================================= */
 .leading {
   display: flex;
   align-items: center;
@@ -88,27 +119,35 @@ nav .social-icons svg {
   font-size: 1.8rem;
   padding: 10px;
 }
-.leading img {
-  flex: 1;
-  object-fit: contain;
-  height: 300px;
-  display: none;
-}
 
 .leading div p {
   margin-bottom: 20px;
 }
 
+/* Hidden on mobile by default */
+.leading img {
+  flex: 1;
+  object-fit: contain;
+  height: 300px;
+  display: none; 
+}
+
+/* Download Button */
 .download {
-  background-color: #4ed0ed;
+  background-color: var(--accent-primary);
   border: none;
   padding: 10px;
   border-radius: 6px;
-  color: white;
+  color: var(--white);
   display: flex;
   align-items: center;
   transition: background-color 0.3s ease-in;
   cursor: pointer;
+  font-size: 1rem;
+}
+
+.download:hover {
+  background-color: var(--accent-hover);
 }
 
 .download svg {
@@ -116,42 +155,9 @@ nav .social-icons svg {
   margin-left: 20px;
 }
 
-.download:hover {
-  background-color: #01a7cc;
-}
-
-.chatbox {
-  background-color: #4ed0ed;
-  width: 50px;
-  height: 50px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: all ease-in-out 0.3s;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-}
-
-.chatbox:hover {
-  background-color: #01a7cc;
-}
-
-.chatbox svg {
-  width: 40px;
-}
-
-footer {
-  padding: 20px;
-  text-align: center;
-}
-
-.title {
-  color: #4ed0ed;
-}
-
+/* =========================================
+   5. PROJECTS SECTION
+   ========================================= */
 .projects {
   margin-top: 20px;
 }
@@ -160,22 +166,24 @@ footer {
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .projects-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px; /* Replaces margin on individual cards */
 }
 
 .project-card {
   width: 80%;
   height: 300px;
-  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
-  background-color: white;
-  margin: 10px;
+  background-color: var(--white);
+  box-shadow: var(--shadow-standard);
+  /* Vendor prefixes for shadow are largely unnecessary in 2025, but kept if you need legacy support */
+  -webkit-box-shadow: var(--shadow-standard); 
+  -moz-box-shadow: var(--shadow-standard);
 }
 
 .project-card img {
@@ -187,7 +195,7 @@ footer {
 
 .project-card div {
   padding: 0 8px;
-  color: #001d2d;
+  color: var(--bg-dark);
 }
 
 .project-card div h3 {
@@ -202,47 +210,98 @@ footer {
 }
 
 .project-card div a {
-  text-decoration: none;
   font-size: small;
   display: inline-block;
-  background-color: #01a7cc;
-  color: white;
+  background-color: var(--accent-hover);
+  color: var(--white);
   padding: 5px 8px;
   border-radius: 5px;
 }
 
+/* =========================================
+   6. FOOTER & FLOATING ELEMENTS
+   ========================================= */
+footer {
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+    color: var(--accent-primary);
+}
+
+.chatbox {
+  background-color: var(--accent-primary);
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all ease-in-out 0.3s;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.chatbox:hover {
+  background-color: var(--accent-hover);
+}
+
+.chatbox svg {
+  width: 40px;
+}
+
+/* =========================================
+   7. MEDIA QUERIES (Desktop > 768px)
+   ========================================= */
 @media only screen and (min-width: 768px) {
-  .leading img {
-    display: block;
-  }
-
-  .projects-wrapper {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .project-card {
-    max-width: 300px;
-  }
-
-  .hamburger-menu {
+  
+  /* Reset Navigation for Desktop */
+  .hamburger-menu,
+  .mobile-nav-actions {
     display: none;
   }
 
   .nav-links {
-    display: block;
-    position: relative;
     display: flex;
-    align-items: center;
+    position: relative;
+    background-color: transparent;
+    padding: 0;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
   }
 
   .nav-links .links {
-    display: flex;
     flex-direction: row;
     margin-bottom: 0;
     margin-right: 100px;
   }
-  .mobile-nav-actions {
-    display: none;
+  
+  .nav-links a {
+      font-size: 18px; /* Adjusted size for desktop header */
+      margin: 0 15px;
+  }
+
+  /* Show Hero Image */
+  .leading img {
+    display: block;
+  }
+
+  /* Project Grid Layout */
+  .projects-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .project-card {
+    max-width: 300px;
+    width: 32%; /* Fits 3 in a row roughly */
+    margin: 0;
   }
 }
